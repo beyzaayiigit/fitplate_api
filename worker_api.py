@@ -3,6 +3,8 @@ from ultralytics import YOLO
 import cv2
 import os
 
+redis_url = os.getenv("REDIS_URL")
+
 app = Celery(
     "worker_api",
     broker="redis://localhost:6379/0",
